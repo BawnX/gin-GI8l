@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-	"os"
 	"service-users/graph"
 	"service-users/graph/generated"
 

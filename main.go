@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 	"service-users/graph"
 	"service-users/graph/generated"
 
@@ -33,5 +34,5 @@ func main() {
 		return nil
 	})
 
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":" + os.Getenv("PORT")))
 }

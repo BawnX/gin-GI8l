@@ -1,11 +1,13 @@
 package main
 
 import (
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 	"net/http"
+	"os"
 	"service-users/graph"
 	"service-users/graph/generated"
+
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
@@ -32,5 +34,5 @@ func main() {
 		return nil
 	})
 
-	e.Logger.Fatal(e.Start(":4001"))
+	e.Logger.Fatal(e.Start(os.Getenv("PORT")))
 }
